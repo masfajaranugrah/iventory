@@ -1,0 +1,401 @@
+<div class="main-sidebar" style="display: none;" >
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="" class="logo">Admin Gudang</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="">GH</a>
+          </div>
+          <ul class="sidebar-menu" >
+           
+            <li class="menu-header">Dashboard</li>
+              <li class="active"><a class="nav-link" href="http://10.5.48.2:8080/admin-gudang"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+              <li class="menu-header">Website</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Modul Gudang</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link text-black" href="http://10.5.48.2:8080/admin-gudang/barang-gudang">Input Barang</a></li>
+                  <li><a class="nav-link text-black" href="http://10.5.48.2:8080/admin-gudang/barang-in-out">Barang Masuk & Keluar</a></li>
+                  <li><a class="nav-link" href="http://10.5.48.2:8080/manager-gudang/acc-pengambilan-barang">Acc Pengambilan Barang</a></li>
+                  <li><a class="nav-link" href="http://10.5.48.2:8080/admin-gudang/riwayat-pengambilan">Riwayat Pengambilan</a></li>
+                </ul>
+              </li>
+            <li><a class="nav-link" href="http://10.5.48.2:8080/admin-gudang/laporan"><i class="fas fa-clipboard"></i> <span>Laporan</span></a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" ><i class="fas fa-database"></i><span>Master Data</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link text-black" href="http://10.5.48.2:8080/admin-gudang/kategori-barang">Kategori</a></li>
+                  <li><a class="nav-link text-black" href="http://10.5.48.2:8080/admin-gudang/satuan-barang">Satuan</a></li>
+                </ul>
+              </li>
+         
+                <li><a class="nav-link" href="/admin-gudang/cerateAccount"><i class="fas fa-clipboard"></i> <span>Register</span></a></li>
+              
+          </ul>
+
+        </aside>
+      </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Laporan</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" integrity="sha512-P9pgMgcSNlLb4Z2WAB2sH5KBKGnBfyJnq+bhcfLCFusrRc4XdXrhfDluBl/usq75NF5gTDIMcwI1GaG5gju+Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="http://10.5.48.2:8080/assets/css/datatables.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  
+  
+  <link href="  https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css
+  " rel="stylesheet" />
+  
+  <link href=" https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css
+  " rel="stylesheet" />
+
+    <!-- Template CSS -->
+  <link href="http://10.5.48.2:8080/assets/css/style.css" rel="stylesheet">
+  <link href="http://10.5.48.2:8080/assets/css/components.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="../assets/admin/assets/css/components.css"> -->
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="preloader" style="display: block;">
+ 
+    <div class="loading">
+   
+      <div class="spinner-border text-primary" role="status"></div>
+   
+    </div>
+   
+  </div>
+    <div class="main-wrapper" style="display: none;">
+      <div class="navbar-bg"></div>
+      <!-- navbar -->
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg main-navbar">
+    <form class="form-inline mr-auto nav-section">
+      <ul class="navbar-nav mr-3">
+        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+      </ul>
+      <div class="search-element">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250" style="width: 250px;">
+        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+        <div class="search-backdrop"></div>
+        <div class="search-result">
+          <div class="search-header">
+            Histories
+          </div>
+          <div class="search-item">
+            <a href="#">How to hack NASA using CSS</a>
+            <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+          </div>
+          <div class="search-item">
+            <a href="#">Kodinger.com</a>
+            <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+          </div>
+          <div class="search-item">
+            <a href="#">#Stisla</a>
+            <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+          </div>
+          <div class="search-header">
+            Result
+          </div>
+          <div class="search-item">
+            <a href="#">
+              <img class="mr-3 rounded" width="30" src="assets/img/products/product-3-50.png" alt="product">
+              oPhone S9 Limited Edition
+            </a>
+          </div>
+          <div class="search-item">
+            <a href="#">
+              <img class="mr-3 rounded" width="30" src="assets/img/products/product-2-50.png" alt="product">
+              Drone X2 New Gen-7
+            </a>
+          </div>
+          <div class="search-item">
+            <a href="#">
+              <img class="mr-3 rounded" width="30" src="assets/img/products/product-1-50.png" alt="product">
+              Headphone Blitz
+            </a>
+          </div>
+          <div class="search-header">
+            Projects
+          </div>
+          <div class="search-item">
+            <a href="#">
+              <div class="search-icon bg-danger text-white mr-3">
+                <i class="fas fa-code"></i>
+              </div>
+              Stisla Admin Template
+            </a>
+          </div>
+          <div class="search-item">
+            <a href="#">
+              <div class="search-icon bg-primary text-white mr-3">
+                <i class="fas fa-laptop"></i>
+              </div>
+              Create a new Homepage Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+    <ul class="navbar-nav navbar-right nedv">
+      <div class="d-flex justify-content-center align-content-center nedv">
+         <span class="users">admin</span>
+          <form action="http://10.5.48.2:8080/logout"  method="POST" class="logout">
+          <input type="hidden" name="_token" value="66lVHqpvrC78ug93MwcZUaxCEszgmLedPZmCL4T9">            <button type="submit" class="btn btn-danger">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+         
+          </form>
+        </div>
+        </ul>
+  </nav>      <!-- end navbar -->
+      <div  >
+      <!-- Main Content -->
+      <div class="main-content" id="content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Laporan</h1>
+          </div>
+          <div>
+
+            <div class="card">
+    <div class="col-12 col-md-6 col-lg-12">
+        <div>
+            <form action="http://10.5.48.2:8080/admin-gudang/laporan" method="get">
+                <input type="hidden" name="_token" value="66lVHqpvrC78ug93MwcZUaxCEszgmLedPZmCL4T9">                <label for="filter">Pilih Filter:</label>
+                <select name="filter" id="filter">
+                    <option value="hariIni" selected>Hari Ini</option>
+                    <option value="bulanIni" >Bulan Ini</option>
+                    <option value="tahunIni" >Tahun Ini</option>
+                </select>
+                <button type="submit">Filter</button>
+                <button type="submit" name="export" value="true">Export</button>
+            </form>
+
+            <table id="data-tables" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th scope="col">Nama</th>
+                        <th scope="col">kategori</th>
+                        <th scope="col">satuan</th>
+                        <th scope="col">deskripsi</th>
+                        <th scope="col">stok</th>
+                        <th scope="col">tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td>Fajar</td>
+                        <td>Fajar</td>
+                        <td>batang</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>15 November 2023</td>
+                    </tr>
+                                    <tr>
+                        <td>qSQ</td>
+                        <td>Fajar</td>
+                        <td>batang</td>
+                        <td>kebersihan</td>
+                        <td>12</td>
+                        <td>15 November 2023</td>
+                    </tr>
+                                    <tr>
+                        <td>sapu</td>
+                        <td>Fajar</td>
+                        <td>batang</td>
+                        <td>kebersihan</td>
+                        <td>12</td>
+                        <td>15 November 2023</td>
+                    </tr>
+                                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="main-footer">
+    <div class="text-dark">
+      Copyright © 2023.  Gudang
+
+    </div>
+    <div class="footer-right">
+      
+    </div>
+  </footer>
+  </div>
+
+  <script>
+    function submitForm() {
+        var form = document.getElementById('userForm');
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'X-CSRF-Token': '66lVHqpvrC78ug93MwcZUaxCEszgmLedPZmCL4T9',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle success (if needed)
+            $('#myModal').modal('hide'); // Close the modal on success
+        })
+        .catch(error => {
+            if (error.message === 'Unprocessable Entity') {
+                // If validation error, display errors and keep modal open
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'X-CSRF-Token': '66lVHqpvrC78ug93MwcZUaxCEszgmLedPZmCL4T9',
+                    },
+                })
+                .then(response => response.json())
+                .then(errors => {
+                    Object.keys(errors.errors).forEach(key => {
+                        var inputField = $('#' + key);
+                        inputField.addClass('is-invalid');
+                        inputField.next('.invalid-feedback').html(errors.errors[key][0]);
+                    });
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+            } else {
+                // Handle other types of errors (e.g., server errors)
+                console.error(error);
+            }
+        });
+    }
+</script>
+
+  
+  <script>
+    // Menghilangkan pesan alert setelah 3 menit
+    setTimeout(function() {
+      let successAlert = document.getElementById('alert');
+      if (successAlert) {
+        successAlert.style.display = 'none';
+      }
+    }, 3000); // 3000 milidetik
+    </script>
+<script type="text/javascript">
+  // Menampilkan preloader saat dokumen dimuat
+  $(document).ready(function() {
+    $(".preloader").show();
+  });
+
+  // Menyembunyikan preloader setelah proses pemuatan selesai
+  $(window).on("load", function() {
+    $(".preloader").fadeOut("slow", function() {
+      // Setelah preloader selesai, tampilkan kembali elemen main-wrapper
+      $(".main-wrapper").show();
+      $(".main-sidebar").show();
+    });
+  });
+</script>
+      <script>
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('togglePassword');
+        const icon = document.getElementById('icon');
+      
+        toggleButton.addEventListener('click', function() {
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+           
+          } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          }
+        });
+
+        const passwordInput2 = document.getElementById('password2');
+        const toggleButton2 = document.getElementById('togglePassword2');
+        const icon2 = document.getElementById('icon2');
+      
+        toggleButton2.addEventListener('click', function() {
+          if (passwordInput2.type === 'password') {
+            passwordInput2.type = 'text';
+            icon2.classList.remove('fa-eye-slash');
+            icon2.classList.add('fa-eye');
+          } else {
+            passwordInput2.type = 'password';
+            icon2.classList.remove('fa-eye');
+            icon2.classList.add('fa-eye-slash');
+          }
+        });
+      </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- General JS Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="http://10.5.48.2:8080/assets/js/stisla.js"></script>
+  <script src="http://10.5.48.2:8080/assets/js/page/swite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- data tables library -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.js"></script>
+  <!-- Template JS File -->
+  <script src="http://10.5.48.2:8080/assets/js/scripts.js"></script>
+  <script src="http://10.5.48.2:8080/assets/js/custom.js"></script>
+  <script src="http://10.5.48.2:8080/assets/js/darkmode.js"></script>
+<!-- Tambahkan Bootstrap JS dan jQuery -->
+
+
+
+<script type="text/javascript"  src="http://10.5.48.2:8080/assets/js/scriptnew.js"></script>
+<script type="text/javascript" src="http://10.5.48.2:8080/assets/js/scriptnew1.js"></script>
+
+
+<script>
+new DataTable('#data-tables', {
+  "pagingType": "simple_numbers",
+  lengthMenu: [
+        [5, 10, 20, -1],
+        [5, 10, 20, 'All']
+    ]
+});           
+  </script>
+
+  <!-- Page Specific JS File -->
+</body>
+</html>
